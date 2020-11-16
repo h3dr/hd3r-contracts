@@ -1,0 +1,29 @@
+{
+  "name": "hd3r",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.2.0",
+    "@truffle/hdwallet-provider": "^1.1.0",
+    "ipfs-http-client": "^47.0.1",
+    "shelljs": "^0.8.4",
+    "truffle": "^5.1.45",
+    "truffle-contract": "^4.0.31",
+    "truffle-plugin-verify": "^0.5.0",
+    "typechain": "^2.0.0",
+    "typechain-target-ethers": "^1.0.4",
+    "typescript": "^4.0.3"
+  },
+  "scripts": {
+    "clean": "rm -rf build test typings/contracts",
+    "gen:contract-typings": "typechain --target ethers --outDir typings/contracts './build/contracts/*.json'",
+    "migrate": "truffle migrate --network development --reset",
+    "migrate:rinkeby": "truffle migrate --network rinkeby",
+    "deploy": "truffle deploy --network development",
+    "deploy:rinkeby": "truffle deploy --network rinkeby",
+    "verify": "truffle run verify $SMCT --network rinkeby",
+    "console": "truffle console",
+    "console:rinkeby": "truffle console --network rinkeby"
+  }
+}
